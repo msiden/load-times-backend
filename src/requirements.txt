@@ -1,0 +1,6 @@
+connexion[swagger-ui]
+flask_cors
+gunicorn
+SQLAlchemy
+marshmallow-sqlalchemy
+psycopg2-binary

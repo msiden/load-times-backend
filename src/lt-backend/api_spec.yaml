@@ -1,0 +1,63 @@
+openapi: 3.0.0
+
+info:
+  title: Load times service
+  version: 0.0.1
+
+paths:
+  /get_load_time:
+    get:
+      operationId: endpoints.get_load_time
+      summary: Get load time for URL
+      parameters:
+      - name: url
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  load_time:
+                    type: number
+
+  /get_results:
+    get:
+      operationId: endpoints.get_results
+      summary: Get results of previous actions
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  results:
+                    type: object
+        '500':
+          description: Error
+          content:
+            application/json:
+              schema:
+                type: object
+                description: Error response according to draft
+                properties:
+                  status:
+                    description: "HTTP error code"
+                    type: integer
+                  title:
+                    description: "Error"
+                    type: string
+                  detail:
+                    description: "Detailed human readable error description"
+                    type: string
+                  type:
+                    description: "Problem type, ref to URI"
+                    type: string
+
