@@ -15,6 +15,11 @@ paths:
         required: true
         schema:
           type: string
+      - name: search_phrase
+        in: query
+        required: true
+        schema:
+          type: string
       responses:
         '200':
           description: Ok
@@ -25,6 +30,8 @@ paths:
                 properties:
                   load_time:
                     type: number
+                  search_phrase_occurencies:
+                    type: integer
 
   /get_results:
     get:

@@ -2,11 +2,20 @@
 import requests
 
 
-def get_load_time(url: str) -> dict:
+def get_load_time(url: str, search_phrase) -> dict:
+
+    if not url.startswith("http"):
+        url = "http://" + url
+
     response = requests.get(url)
-    print(url, response.status_code, response.elapsed, type(response.elapsed))
-    # print(response.text)
-    return {"load_time": 1.00012}
+    response.raise_for_status()
+
+    page_content = response.text.lower()
+
+    return {
+        "load_time": response.elapsed.total_seconds(),
+        "search_phrase_occurencies": page_content.count(search_phrase.lower())
+    }
 
 
 def get_results() -> list:
