@@ -1,5 +1,0 @@
-base_uri: 'postgresql+psycopg2://'
-db_host: 'storage'
-db_port: '5432'
-db_name: 'loan'
-db_user: 'postgres'

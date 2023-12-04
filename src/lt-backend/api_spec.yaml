@@ -28,15 +28,28 @@ paths:
               schema:
                 type: object
                 properties:
-                  load_time:
+                  url:
+                    type: string
+                  search_phrase:
+                    type: string
+                  response_time:
                     type: number
-                  search_phrase_occurencies:
+                  occurencies:
                     type: integer
+                  start_time:
+                    type: string
 
   /get_results:
     get:
       operationId: endpoints.get_results
       summary: Get results of previous actions
+      parameters:
+      - name: chunk_size
+        in: query
+        required: false
+        schema:
+          type: integer
+          default: 10
       responses:
         '200':
           description: Ok
