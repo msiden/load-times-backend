@@ -7,6 +7,4 @@ RUN pip install -r /tmp/requirements.txt
 
 WORKDIR /usr/src/app/lt-backend
 
-EXPOSE 8000
-
 CMD ["gunicorn", "-w", "1", "-b", "0.0.0.0:8000", "app:app()"]
