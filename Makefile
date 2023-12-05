@@ -1,13 +1,7 @@
-build-deploy:
+build:
 	docker build --no-cache -t lt-backend:latest .
 
-build-local:
-	docker build \
-		--no-cache \
-		-t lt-backend \
-		-f ./Dockerfile.dev .
-
-run-local-docker: build-local
+run-docker: build
 	docker run -ti --network="host" -p 8000:8000 lt-backend
 
 run-local:

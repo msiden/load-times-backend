@@ -1,6 +1,5 @@
-connexion[swagger-ui]
-flask_cors
-gunicorn
-SQLAlchemy
-marshmallow-sqlalchemy
-psycopg2-binary
+connexion[swagger-ui]==2.14.2
+flask_cors==3.0.10
+gunicorn==20.1.0
+SQLAlchemy==2.0.21
+marshmallow-sqlalchemy==0.29.0
