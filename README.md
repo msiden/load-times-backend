@@ -10,5 +10,6 @@ Run it as follows:
 * Clone both repos to your local machine
 * cd into /load-times-frontend
 * Run: make run-full-stack
+* Go to http://localhost:3000 in your browser
 
 You need to have Docker and docker-compose installed.
